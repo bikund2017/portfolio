@@ -4,7 +4,7 @@ A modern, interactive portfolio website built with React, Vite, and Tailwind CSS
 
 ## 🚀 Deployment Options
 
-### Option 1: Vercel (Recommended)
+### Vercel
 1. Push your code to GitHub
 2. Go to [vercel.com](https://vercel.com)
 3. Sign up/Login with your GitHub account
