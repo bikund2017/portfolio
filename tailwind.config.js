@@ -1,27 +1,31 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html", "./src/**/*.{js,jsx,ts,tsx}"],
-  darkMode: false, // Disable dark mode functionality
+  darkMode: false,
   theme: {
     extend: {
       colors: {
+        // B&W Theme Colors
+        primary: '#ffffff',
+        secondary: '#888888',
+        accent: '#cccccc',
+        dark: '#0a0a0a',
+        darker: '#000000',
+        muted: '#666666',
+        // Legacy gradient colors (for compatibility)
         gradient1: '#000000',
-        gradient2: '#0A2647',
-        gradient3: '#144272',
-        gradient4: '#205295',
-        light: {
-          bg: '#F3F4F6',
-          text:  '#111827',
-          primaryLight: '#144272',  // Blue tones for text/borders
-          backgroundLight: '#ffffff', // White background
-          softBlue: '#DCE8F2', // Optional section b
-        }
+        gradient2: '#0a0a0a',
+        gradient3: '#1a1a1a',
+        gradient4: '#333333',
       },
       fontFamily: {
-        arial: ['Arial', 'sans-serif']
+        sans: ['Inter', 'Segoe UI', 'system-ui', '-apple-system', 'sans-serif'],
+      },
+      boxShadow: {
+        'glow': '0 0 20px rgba(255, 255, 255, 0.1)',
+        'glow-lg': '0 0 40px rgba(255, 255, 255, 0.15)',
       }
     },
   },
   plugins: [],
 }
-

@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadFull } from "tsparticles";
+import type { Container } from "@tsparticles/engine";
 
-export default function SnowParticles() {
-    const [init, setInit] = useState(false);
+export default function SnowParticles(): React.ReactElement {
+    const [init, setInit] = useState<boolean>(false);
 
     useEffect(() => {
         initParticlesEngine(async (engine) => {
@@ -13,7 +14,7 @@ export default function SnowParticles() {
         });
     }, []);
 
-    const particlesLoaded = () => { };
+    const particlesLoaded = async (_container?: Container): Promise<void> => { };
 
     return (
         <>
@@ -38,30 +39,30 @@ export default function SnowParticles() {
                         },
                         particles: {
                             number: {
-                                value: 160,
+                                value: 60,
                                 density: {
                                     enable: true,
-                                    area: 800,
+                                    width: 800,
+                                    height: 800,
                                 },
                             },
                             color: {
-                                value: ["#00FF99", "#00c6ff", "#38BDF8"],
+                                value: ["#22c55e", "#3b82f6", "#7d8590"],
                             },
                             shape: {
                                 type: "circle",
                             },
                             opacity: {
-                                value: 1,
+                                value: 0.25,
                                 animation: {
                                     enable: true,
-                                    speed: 1,
-                                    minimumValue: 0.3,
+                                    speed: 0.3,
+                                    startValue: "random",
                                     sync: false,
                                 },
                             },
                             size: {
-                                value: 1.5,
-                                random: true,
+                                value: 2,
                             },
                             move: {
                                 enable: true,
@@ -75,7 +76,6 @@ export default function SnowParticles() {
                         },
                         detectRetina: true,
                     }}
-
                 />
             )}
         </>

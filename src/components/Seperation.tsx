@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 
-function Seperation() {
+function Seperation(): React.ReactElement {
     return (
         <div className="relative h-0.5">
-            <motion.div 
+            <motion.div
                 className="absolute w-full h-full bg-gradient-to-r from-gradient1 via-gradient3 to-gradient4"
                 initial={{ x: "-100%" }}
                 whileInView={{ x: "0%" }}

@@ -1,9 +1,11 @@
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
-
 import { loadFull } from "tsparticles";
-export default function Particle() {
-    const [init, setInit] = useState(false);
+import type { Container } from "@tsparticles/engine";
+
+export default function Particle(): React.ReactElement {
+    const [init, setInit] = useState<boolean>(false);
+
     useEffect(() => {
         console.log("init");
         initParticlesEngine(async (engine) => {
@@ -13,7 +15,8 @@ export default function Particle() {
         });
     }, []);
 
-    const particlesLoaded = (container) => {
+    const particlesLoaded = async (_container?: Container): Promise<void> => {
+        // Container loaded callback
     };
 
     return (
@@ -37,7 +40,6 @@ export default function Particle() {
                                     enable: true,
                                     mode: "repulse",
                                 },
-                                resize: true,
                             },
                             modes: {
                                 push: {
@@ -51,13 +53,13 @@ export default function Particle() {
                         },
                         particles: {
                             color: {
-                                  value: ["#00c6ff", "#5f9acf", "#2C74B3", "#38bdf8"],
+                                value: ["#ffffff", "#888888", "#cccccc", "#666666"],
                             },
                             links: {
-                                color: "#e0f2fe",
+                                color: "#444444",
                                 distance: 150,
                                 enable: true,
-                                opacity: 0.5,
+                                opacity: 0.3,
                                 width: 1,
                             },
                             move: {
@@ -73,18 +75,19 @@ export default function Particle() {
                             number: {
                                 density: {
                                     enable: true,
-                                    area: 800,
+                                    width: 800,
+                                    height: 800,
                                 },
                                 value: 160,
                             },
                             opacity: {
-                                value: 0.5,
+                                value: 0.4,
                             },
                             shape: {
                                 type: "circle",
                             },
                             size: {
-                                value: { min: 1, max: 5 },
+                                value: { min: 1, max: 4 },
                             },
                         },
                         detectRetina: true,
