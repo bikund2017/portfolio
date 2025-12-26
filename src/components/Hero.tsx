@@ -19,7 +19,7 @@ const techBadges = [
 
 const highlights = [
     { value: "BCA", label: "Final Year" },
-    { value: "5+", label: "Projects" },
+    { value: "3+", label: "Projects" },
     { value: "Full Stack", label: "Developer" },
     { value: "Open", label: "To Work" },
 ];

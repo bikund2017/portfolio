@@ -1,9 +1,20 @@
 import { motion } from "framer-motion";
 import ProjectCard, { ProjectData } from "./ProjectCard";
 import weather_forcast from "../assets/weather-app.png";
+import park_ride from "../assets/park-ride.png";
 
-// Add your projects here - just copy the template and fill in your details
 const projects: ProjectData[] = [
+    {
+        title: "Park & Ride+ Delhi NCR",
+        subtitle: "IoT-Enabled Real-time Parking & Transit System",
+        type: "IOT",
+        description:
+            "A full-stack IoT web application integrating Arduino Mega 2560 with IR sensors for real-time parking detection. Features live parking availability updates, interactive Google Maps, community reporting with image uploads, and Firebase-powered authentication. Deployed on Vercel with serverless functions.",
+        demo: "https://park-ride-new1.vercel.app/",
+        image: park_ride,
+        github: "https://github.com/bikund2017/Park-Ride",
+        tech: ["Arduino", "React", "Node.js", "Firebase", "Google Maps API", "Vercel", "Express", "SerialPort"],
+    },
     {
         title: "Weather Forecast App",
         subtitle: "Real-time Weather Application",
@@ -15,17 +26,6 @@ const projects: ProjectData[] = [
         github: "https://github.com/bikund2017/realtime-weather-forecast",
         tech: ["React", "Node.js", "Express", "API", "CSS"],
     },
-    // Add more projects below:
-    // {
-    //     title: "Project Name",
-    //     subtitle: "Short description",
-    //     type: "FULL STACK", // or "FRONTEND" or "BACKEND"
-    //     description: "Detailed description of the project...",
-    //     demo: "https://your-demo-link.com",
-    //     image: your_image_import,
-    //     github: "https://github.com/your-username/repo",
-    //     tech: ["React", "Node.js", "MongoDB"],
-    // },
 ];
 
 export default function Projects(): React.ReactElement {

@@ -1,10 +1,12 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef, ReactElement } from 'react';
 import {
-    FaNodeJs, FaReact, FaHtml5, FaCss3Alt, FaGitAlt, FaDatabase, FaPython, FaJava
+    FaNodeJs, FaReact, FaHtml5, FaCss3Alt, FaGitAlt, FaDatabase, 
+    FaAws,
+    FaDocker,
 } from 'react-icons/fa';
 import {
-    SiJavascript, SiTypescript, SiMongodb, SiExpress, SiTailwindcss, SiCplusplus
+    SiJavascript, SiTypescript, SiMongodb, SiExpress, SiTailwindcss, SiCplusplus, SiVercel, SiPostman, SiFirebase, SiCloudinary, SiArduino, SiGooglemaps
 } from 'react-icons/si';
 import SnowParticles from './SnowParticle';
 
@@ -15,7 +17,6 @@ const skillCategories = [
         skills: [
             { name: 'React', icon: <FaReact className="w-8 h-8" style={{ color: '#61DAFB' }} /> },
             { name: 'JavaScript', icon: <SiJavascript className="w-8 h-8" style={{ color: '#F7DF1E' }} /> },
-            { name: 'TypeScript', icon: <SiTypescript className="w-8 h-8" style={{ color: '#3178C6' }} /> },
             { name: 'HTML5', icon: <FaHtml5 className="w-8 h-8" style={{ color: '#E34F26' }} /> },
             { name: 'CSS3', icon: <FaCss3Alt className="w-8 h-8" style={{ color: '#1572B6' }} /> },
             { name: 'Tailwind', icon: <SiTailwindcss className="w-8 h-8" style={{ color: '#06B6D4' }} /> },
@@ -36,9 +37,28 @@ const skillCategories = [
         color: "#f59e0b",
         skills: [
             { name: 'C++', icon: <SiCplusplus className="w-8 h-8" style={{ color: '#00599C' }} /> },
-            { name: 'Python', icon: <FaPython className="w-8 h-8" style={{ color: '#3776AB' }} /> },
-            { name: 'Java', icon: <FaJava className="w-8 h-8" style={{ color: '#ED8B00' }} /> },
+            { name: 'TypeScript', icon: <SiTypescript className="w-8 h-8" style={{ color: '#3178C6' }} /> }
+        ]
+    },
+    {
+        name: "Tools",
+        color: "#b70bf5ff",
+        skills: [
             { name: 'Git', icon: <FaGitAlt className="w-8 h-8" style={{ color: '#F05032' }} /> },
+            { name: 'AWS', icon: <FaAws className="w-8 h-8" style={{ color: '#FF9900' }} /> },
+            { name: 'Vercel', icon: <SiVercel className="w-8 h-8" style={{ color: '#000000' }} /> },
+            { name: 'Docker', icon: <FaDocker className="w-8 h-8" style={{ color: '#032a72ff' }} /> },
+            { name: 'Postman', icon: <SiPostman className="w-8 h-8" style={{ color: '#e05320' }} /> },
+        ]
+    },
+    {
+        name: "IoT & Cloud",
+        color: "#06b6d4",
+        skills: [
+            { name: 'Arduino', icon: <SiArduino className="w-8 h-8" style={{ color: '#00979D' }} /> },
+            { name: 'Firebase', icon: <SiFirebase className="w-8 h-8" style={{ color: '#FFCA28' }} /> },
+            { name: 'Cloudinary', icon: <SiCloudinary className="w-8 h-8" style={{ color: '#3448C5' }} /> },
+            { name: 'Google Maps', icon: <SiGooglemaps className="w-8 h-8" style={{ color: '#4285F4' }} /> },
         ]
     }
 ];

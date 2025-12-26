@@ -5,7 +5,7 @@ import { HiArrowUpRight } from "react-icons/hi2";
 export interface ProjectData {
     title: string;
     subtitle: string;
-    type: "FULL STACK" | "FRONTEND" | "BACKEND";
+    type: "FULL STACK" | "FRONTEND" | "BACKEND" | "IOT";
     description: string;
     demo: string;
     image: string;
@@ -22,6 +22,7 @@ const projectTypeColors: { [key: string]: string } = {
     "FULL STACK": "#22c55e",
     "FRONTEND": "#3b82f6",
     "BACKEND": "#f59e0b",
+    "IOT": "#06b6d4",
 };
 
 export default function ProjectCard({ project, index = 0 }: ProjectCardProps): React.ReactElement {
@@ -45,13 +46,13 @@ export default function ProjectCard({ project, index = 0 }: ProjectCardProps): R
                     rel="noreferrer"
                     className="block relative overflow-hidden md:w-1/2"
                 >
-                    <div className="aspect-video md:aspect-auto md:h-full bg-[#21262d]">
+                    <div className="aspect-video md:aspect-auto md:h-full bg-[#21262d] flex items-center justify-center">
                         <img
                             src={project.image}
                             alt={project.title}
                             loading="lazy"
                             decoding="async"
-                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                            className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
                         />
                     </div>
                     {/* Hover Overlay */}
