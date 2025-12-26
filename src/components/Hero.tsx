@@ -130,7 +130,7 @@ function Hero(): React.ReactElement {
                                 <span>Get in Touch</span>
                             </motion.a>
                             <motion.a
-                                href="/resume.pdf"
+                                href="/bikund-kumar.pdf"
                                 target="_blank"
                                 rel="noreferrer"
                                 whileHover={{ scale: 1.02 }}
