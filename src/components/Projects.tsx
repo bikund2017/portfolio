@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import ProjectCard, { ProjectData } from "./ProjectCard";
 import weather_forcast from "../assets/weather-app.png";
 import park_ride from "../assets/park-ride.png";
-
+import connectnow from "../assets/connectnow.png";
 const projects: ProjectData[] = [
     {
         title: "Park & Ride+ Delhi NCR",
@@ -16,9 +16,20 @@ const projects: ProjectData[] = [
         tech: ["Arduino", "React", "Node.js", "Firebase", "Google Maps API", "Vercel", "Express", "SerialPort"],
     },
     {
+        title: "ConnectNow",
+        subtitle: "Real-time Chat Application with Instant Messaging & File Sharing",
+        type: "FULL STACK",
+        description:
+            "A real-time chat application featuring instant messaging with typing indicators, file & image sharing via Cloudinary, multi-user chat rooms, and persistent message history (7 days). Built with Socket.io for WebSocket communication, MongoDB Atlas for data storage, and deployed on Vercel (client) and Render (server).",
+        demo: "https://connectnow-drab.vercel.app",
+        image: connectnow,
+        github: "https://github.com/bikund2017/ConnectNow",
+        tech: ["Next.js", "React", "TypeScript", "Socket.io", "Node.js", "Express", "MongoDB", "Cloudinary", "Tailwind CSS"],
+    },
+    {
         title: "Weather Forecast App",
         subtitle: "Real-time Weather Application",
-        type: "FULL STACK",
+        type: "FRONTEND",
         description:
             "A modern web application that provides real-time weather updates, hourly forecasts, and location-based weather data. Built with React and Node.js with API integration.",
         demo: "https://modern-weather-forecast-app.vercel.app/",
