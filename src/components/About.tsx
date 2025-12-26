@@ -102,7 +102,7 @@ export default function About(): React.ReactElement {
 
                         {/* Contact Info */}
                         <a
-                            href="mailto:bikund2017@gmail.com"
+                            href="mailto:bikund2017@outlook.com"
                             className="flex items-center gap-4 p-4 terminal-card hover:border-green-500 transition-colors group"
                         >
                             <div className="p-3 rounded-lg bg-green-500/10 text-green-400 group-hover:bg-green-500/20 transition-colors">
@@ -110,7 +110,7 @@ export default function About(): React.ReactElement {
                             </div>
                             <div>
                                 <p className="text-xs text-[#7d8590] font-mono mb-1">EMAIL</p>
-                                <p className="text-[#e6edf3] font-mono">bikund2017@gmail.com</p>
+                                <p className="text-[#e6edf3] font-mono">bikund2017@outlook.com</p>
                             </div>
                         </a>
 
