@@ -3,6 +3,8 @@ import { useState } from "react";
 import { HiMail, HiLocationMarker, HiArrowRight, HiTerminal } from "react-icons/hi";
 import { FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa";
 import SnowParticles from "./SnowParticle";
+import TerminalHeader from "./common/TerminalHeader";
+import SectionHeader from "./common/SectionHeader";
 
 interface SocialLink {
     icon: React.ReactElement;
@@ -71,23 +73,11 @@ export default function About(): React.ReactElement {
 
             <div className="relative z-10 max-w-6xl mx-auto">
                 {/* Section Header */}
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                    viewport={{ once: true }}
-                    className="text-center mb-16"
-                >
-                    <div className="font-mono text-sm text-[#7d8590] mb-4">
-                        <span className="text-green-500">$</span> cat contact.txt
-                    </div>
-                    <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
-                        Let's Connect
-                    </h2>
-                    <p className="text-[#7d8590] max-w-xl mx-auto">
-                        Looking for an internship or entry-level opportunity? I'd love to hear from you!
-                    </p>
-                </motion.div>
+                <SectionHeader
+                    command="cat contact.txt"
+                    title="Let's Connect"
+                    description="Looking for an internship or entry-level opportunity? I'd love to hear from you!"
+                />
 
                 <div className="grid lg:grid-cols-5 gap-8">
                     {/* Left Column - Code & Info */}
@@ -100,14 +90,7 @@ export default function About(): React.ReactElement {
                     >
                         {/* Code Block */}
                         <div className="terminal-card overflow-hidden">
-                            <div className="flex items-center gap-2 px-4 py-3 bg-[#161b22] border-b border-[#30363d]">
-                                <div className="flex gap-1.5">
-                                    <div className="w-3 h-3 rounded-full bg-[#ff5f56]" />
-                                    <div className="w-3 h-3 rounded-full bg-[#ffbd2e]" />
-                                    <div className="w-3 h-3 rounded-full bg-[#27c93f]" />
-                                </div>
-                                <span className="font-mono text-sm text-[#7d8590] ml-4">about.js</span>
-                            </div>
+                            <TerminalHeader title="about.js" />
                             <pre className="p-4 text-sm font-mono text-[#7d8590] overflow-x-auto">
                                 <code>{codeSnippet}</code>
                             </pre>
@@ -166,17 +149,14 @@ export default function About(): React.ReactElement {
                     >
                         <div className="terminal-card overflow-hidden">
                             {/* Terminal Header */}
-                            <div className="flex items-center gap-2 px-4 py-3 bg-[#161b22] border-b border-[#30363d]">
-                                <div className="flex gap-1.5">
-                                    <div className="w-3 h-3 rounded-full bg-[#ff5f56]" />
-                                    <div className="w-3 h-3 rounded-full bg-[#ffbd2e]" />
-                                    <div className="w-3 h-3 rounded-full bg-[#27c93f]" />
-                                </div>
-                                <span className="font-mono text-sm text-[#7d8590] ml-4 flex items-center gap-2">
-                                    <HiTerminal className="w-4 h-4" />
-                                    contact-form
-                                </span>
-                            </div>
+                            <TerminalHeader
+                                title={
+                                    <>
+                                        <HiTerminal className="w-4 h-4" />
+                                        contact-form
+                                    </>
+                                }
+                            />
 
                             <div className="p-6">
                                 {submitted ? (

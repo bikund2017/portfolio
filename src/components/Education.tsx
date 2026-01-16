@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
 import { FaCalendarAlt, FaMapMarkerAlt, FaCertificate, FaExternalLinkAlt } from "react-icons/fa";
 import { HiAcademicCap } from "react-icons/hi";
+import TerminalHeader from "./common/TerminalHeader";
+import SectionHeader from "./common/SectionHeader";
+import { fadeInUpSlow, fadeInUp } from "../utils/animations";
 
 const education = {
     degree: "Bachelor of Computer Application",
@@ -48,43 +51,23 @@ export default function Education(): React.ReactElement {
 
             <div className="relative z-10 max-w-4xl mx-auto px-6">
                 {/* Section Header */}
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                    viewport={{ once: true }}
-                    className="text-center mb-16"
-                >
-                    <div className="font-mono text-sm text-[#7d8590] mb-4">
-                        <span className="text-green-500">$</span> cat education.txt
-                    </div>
-                    <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
-                        Education & Certificates
-                    </h2>
-                    <p className="text-[#7d8590] max-w-xl mx-auto">
-                        My academic background.
-                    </p>
-                </motion.div>
+                <SectionHeader
+                    command="cat education.txt"
+                    title="Education & Certificates"
+                    description="My academic background."
+                />
 
                 {/* Education Card */}
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    variants={fadeInUpSlow}
+                    initial="initial"
+                    whileInView="animate"
                     transition={{ duration: 0.5 }}
                     viewport={{ once: true }}
                     className="terminal-card overflow-hidden mb-8"
                 >
                     {/* Terminal Header */}
-                    <div className="flex items-center gap-2 px-4 py-3 bg-[#161b22] border-b border-[#30363d]">
-                        <div className="flex gap-1.5">
-                            <div className="w-3 h-3 rounded-full bg-[#ff5f56]" />
-                            <div className="w-3 h-3 rounded-full bg-[#ffbd2e]" />
-                            <div className="w-3 h-3 rounded-full bg-[#27c93f]" />
-                        </div>
-                        <span className="font-mono text-sm text-[#7d8590] ml-4">
-                            academic-profile.md
-                        </span>
-                    </div>
+                    <TerminalHeader title="academic-profile.md" />
 
                     <div className="p-6 sm:p-8">
                         <div className="flex flex-col sm:flex-row items-start gap-6">
@@ -125,8 +108,9 @@ export default function Education(): React.ReactElement {
 
                 {/* Certificates Section */}
                 <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    variants={fadeInUp}
+                    initial="initial"
+                    whileInView="animate"
                     transition={{ duration: 0.6, delay: 0.2 }}
                     viewport={{ once: true }}
                     className="mt-16"
@@ -146,8 +130,9 @@ export default function Education(): React.ReactElement {
                                 href={cert.credentialUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
+                                variants={fadeInUpSlow}
+                                initial="initial"
+                                whileInView="animate"
                                 transition={{ duration: 0.4, delay: i * 0.1 }}
                                 viewport={{ once: true }}
                                 className="group block bg-[#161b22] rounded-xl border border-[#30363d] p-5 hover:border-green-500/50 transition-all duration-300"

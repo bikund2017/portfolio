@@ -1,7 +1,7 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef, ReactElement } from 'react';
 import {
-    FaNodeJs, FaReact, FaHtml5, FaCss3Alt, FaGitAlt, FaDatabase, 
+    FaNodeJs, FaReact, FaHtml5, FaCss3Alt, FaGitAlt, FaDatabase,
     FaAws,
     FaDocker,
 } from 'react-icons/fa';
@@ -9,6 +9,8 @@ import {
     SiJavascript, SiTypescript, SiMongodb, SiExpress, SiTailwindcss, SiCplusplus, SiVercel, SiPostman, SiFirebase, SiCloudinary, SiArduino, SiGooglemaps
 } from 'react-icons/si';
 import SnowParticles from './SnowParticle';
+import SectionHeader from './common/SectionHeader';
+import { fadeInUpSlow, fadeInLeft, fadeIn } from '../utils/animations';
 
 const skillCategories = [
     {
@@ -75,8 +77,9 @@ function SkillCard({ skill, index }: SkillCardProps): React.ReactElement {
     return (
         <motion.div
             ref={ref}
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            variants={fadeInUpSlow}
+            initial="initial"
+            animate={isInView ? "animate" : "initial"}
             transition={{ duration: 0.3, delay: index * 0.05 }}
             whileHover={{ scale: 1.05, y: -5 }}
             className="terminal-card p-6 flex flex-col items-center gap-3 group cursor-pointer"
@@ -101,31 +104,20 @@ export default function Skills(): React.ReactElement {
 
             <div className="relative z-10 max-w-6xl mx-auto">
                 {/* Section Header */}
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                    viewport={{ once: true }}
-                    className="text-center mb-16"
-                >
-                    <div className="font-mono text-sm text-[#7d8590] mb-4">
-                        <span className="text-green-500">$</span> cat skills.json
-                    </div>
-                    <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
-                        Tech Stack
-                    </h2>
-                    <p className="text-[#7d8590] max-w-xl mx-auto">
-                        Technologies I've learned and used to build projects during my CS journey.
-                    </p>
-                </motion.div>
+                <SectionHeader
+                    command="cat skills.json"
+                    title="Tech Stack"
+                    description="Technologies I've learned and used to build projects during my CS journey."
+                />
 
                 {/* Skills by Category */}
                 <div className="space-y-12">
                     {skillCategories.map((category, categoryIndex) => (
                         <motion.div
                             key={category.name}
-                            initial={{ opacity: 0, x: -30 }}
-                            whileInView={{ opacity: 1, x: 0 }}
+                            variants={fadeInLeft}
+                            initial="initial"
+                            whileInView="animate"
                             transition={{ duration: 0.5, delay: categoryIndex * 0.1 }}
                             viewport={{ once: true }}
                         >
@@ -157,8 +149,9 @@ export default function Skills(): React.ReactElement {
 
                 {/* Learning Status */}
                 <motion.div
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
+                    variants={fadeIn}
+                    initial="initial"
+                    whileInView="animate"
                     transition={{ delay: 0.5 }}
                     viewport={{ once: true }}
                     className="mt-16 text-center"

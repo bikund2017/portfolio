@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import ProjectCard, { ProjectData } from "./ProjectCard";
+import SectionHeader from "./common/SectionHeader";
 import weather_forcast from "../assets/weather-app.png";
 import park_ride from "../assets/park-ride.png";
 import connectnow from "../assets/connectnow.png";
@@ -50,23 +51,11 @@ export default function Projects(): React.ReactElement {
 
             <div className="relative z-10 max-w-6xl mx-auto">
                 {/* Section Header */}
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                    viewport={{ once: true }}
-                    className="text-center mb-16"
-                >
-                    <div className="font-mono text-sm text-[#7d8590] mb-4">
-                        <span className="text-green-500">$</span> ls projects/
-                    </div>
-                    <h2 className="text-4xl sm:text-5xl font-bold mb-4">
-                        My Projects
-                    </h2>
-                    <p className="text-[#7d8590] max-w-xl mx-auto">
-                        Projects I've built while learning web development.
-                    </p>
-                </motion.div>
+                <SectionHeader
+                    command="ls projects/"
+                    title="My Projects"
+                    description="Projects I've built while learning web development."
+                />
 
                 {/* Projects Column */}
                 <div className="flex flex-col gap-10 max-w-5xl mx-auto">
