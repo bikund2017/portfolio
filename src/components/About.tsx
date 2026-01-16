@@ -36,16 +36,29 @@ export default function About(): React.ReactElement {
         e.preventDefault();
         setIsSubmitting(true);
 
-        await fetch("https://formspree.io/f/mgvageav", {
-            method: "POST",
-            body: JSON.stringify(formData),
-            headers: { 'Content-Type': 'application/json' },
-        });
+        try {
+            const response = await fetch("https://formspree.io/f/xdaaaaon", {
+                method: "POST",
+                body: JSON.stringify(formData),
+                headers: { 'Content-Type': 'application/json' },
+            });
 
-        setIsSubmitting(false);
-        setSubmitted(true);
-        setFormData({ name: '', email: '', message: '' });
-        setTimeout(() => setSubmitted(false), 5000);
+            if (response.ok) {
+                setIsSubmitting(false);
+                setSubmitted(true);
+                setFormData({ name: '', email: '', message: '' });
+                setTimeout(() => setSubmitted(false), 5000);
+            } else {
+                const errorData = await response.json();
+                console.error('Formspree Error:', errorData);
+                alert(`Form submission failed: ${errorData.error || 'Unknown error'}`);
+                setIsSubmitting(false);
+            }
+        } catch (error) {
+            console.error('Network Error:', error);
+            alert('Failed to send message. Please try again.');
+            setIsSubmitting(false);
+        }
     };
 
     return (
