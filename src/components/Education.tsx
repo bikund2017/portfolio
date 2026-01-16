@@ -13,7 +13,6 @@ const education = {
     status: "Final Year",
 };
 
-// Add your certificates here
 const certificates = [
     {
         name: "C++ DSA",
